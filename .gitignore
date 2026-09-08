@@ -15,6 +15,12 @@ obj/
 # Logs
 *.log
 
+# Base de datos local
+Data/*.db
+
+# Copias de seguridad de la base
+Backup/*.db
+
 # SQLite temporales
 *.db-wal
 *.db-shm

@@ -217,5 +217,11 @@ namespace SistPuntos_Heladeria.UI
                 );
             }
         }
+        private void btnPuntos_Click(object? sender, EventArgs e)
+        {
+            FrmPuntos frmPuntos = new FrmPuntos();
+            frmPuntos.ShowDialog();
+        }
+
     }
 }

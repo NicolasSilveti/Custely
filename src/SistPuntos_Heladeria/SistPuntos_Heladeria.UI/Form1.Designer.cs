@@ -41,6 +41,7 @@
             btnBuscarCliente = new Button();
             btnModificarCliente = new Button();
             btnEliminarCliente = new Button();
+            btnPuntos = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
             // 
@@ -156,11 +157,22 @@
             btnEliminarCliente.UseVisualStyleBackColor = true;
             btnEliminarCliente.Click += btnEliminarCliente_Click;
             // 
+            // btnPuntos
+            // 
+            btnPuntos.Location = new Point(476, 381);
+            btnPuntos.Name = "btnPuntos";
+            btnPuntos.Size = new Size(135, 41);
+            btnPuntos.TabIndex = 13;
+            btnPuntos.Text = "Puntos / Compras";
+            btnPuntos.UseVisualStyleBackColor = true;
+            btnPuntos.Click += btnPuntos_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnPuntos);
             Controls.Add(btnEliminarCliente);
             Controls.Add(btnModificarCliente);
             Controls.Add(btnBuscarCliente);
@@ -197,5 +209,6 @@
         private Button btnBuscarCliente;
         private Button btnModificarCliente;
         private Button btnEliminarCliente;
+        private Button btnPuntos;
     }
 }

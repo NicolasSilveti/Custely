@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistPuntos_Heladeria.ENTITY
 {
-    internal class MovimientoPuntos
+    public class MovimientoPuntos
     {
         public int IdMovimiento { get; set; }
 

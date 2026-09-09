@@ -61,6 +61,19 @@ namespace SistPuntos_Heladeria.DAL
                     throw;
                 }
             }
+            string insertarConfiguracionInicial = @"
+            INSERT INTO Configuracion (PesosPorPuntoCentavos)
+            SELECT 10000
+            WHERE NOT EXISTS (
+            SELECT 1
+            FROM Configuracion
+             );
+             ";
+
+            using SqliteCommand comandoConfiguracion =
+                new SqliteCommand(insertarConfiguracionInicial, conexion);
+
+            comandoConfiguracion.ExecuteNonQuery();
         }
     }
 }

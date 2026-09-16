@@ -42,6 +42,9 @@
             btnModificarCliente = new Button();
             btnEliminarCliente = new Button();
             btnPuntos = new Button();
+            btnConfiguracion = new Button();
+            btnUsuarios = new Button();
+            btnCambiarClave = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
             // 
@@ -167,11 +170,44 @@
             btnPuntos.UseVisualStyleBackColor = true;
             btnPuntos.Click += btnPuntos_Click;
             // 
+            // btnConfiguracion
+            // 
+            btnConfiguracion.Location = new Point(265, 381);
+            btnConfiguracion.Name = "btnConfiguracion";
+            btnConfiguracion.Size = new Size(150, 41);
+            btnConfiguracion.TabIndex = 14;
+            btnConfiguracion.Text = "Configuración";
+            btnConfiguracion.UseVisualStyleBackColor = true;
+            btnConfiguracion.Click += btnConfiguracion_Click;
+            // 
+            // btnUsuarios
+            // 
+            btnUsuarios.Location = new Point(130, 381);
+            btnUsuarios.Name = "btnUsuarios";
+            btnUsuarios.Size = new Size(96, 41);
+            btnUsuarios.TabIndex = 15;
+            btnUsuarios.Text = "Usuarios";
+            btnUsuarios.UseVisualStyleBackColor = true;
+            btnUsuarios.Click += btnUsuarios_Click;
+            // 
+            // btnCambiarClave
+            // 
+            btnCambiarClave.Location = new Point(658, 381);
+            btnCambiarClave.Name = "btnCambiarClave";
+            btnCambiarClave.Size = new Size(100, 41);
+            btnCambiarClave.TabIndex = 16;
+            btnCambiarClave.Text = "Cambiar clave";
+            btnCambiarClave.UseVisualStyleBackColor = true;
+            btnCambiarClave.Click += btnCambiarClave_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnCambiarClave);
+            Controls.Add(btnUsuarios);
+            Controls.Add(btnConfiguracion);
             Controls.Add(btnPuntos);
             Controls.Add(btnEliminarCliente);
             Controls.Add(btnModificarCliente);
@@ -210,5 +246,8 @@
         private Button btnModificarCliente;
         private Button btnEliminarCliente;
         private Button btnPuntos;
+        private Button btnConfiguracion;
+        private Button btnUsuarios;
+        private Button btnCambiarClave;
     }
 }

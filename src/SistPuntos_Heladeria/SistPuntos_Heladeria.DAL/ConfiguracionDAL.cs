@@ -41,5 +41,42 @@ namespace SistPuntos_Heladeria.DAL
 
             return null;
         }
+        public void ActualizarPesosPorPunto(decimal pesosPorPunto)
+        {
+            using SqliteConnection conexion = Conexion.CrearConexion();
+
+            conexion.Open();
+
+            long pesosPorPuntoCentavos =
+                (long)Math.Round(pesosPorPunto * 100);
+
+            string sql = @"
+        UPDATE Configuracion
+        SET PesosPorPuntoCentavos = @PesosPorPuntoCentavos
+        WHERE IdConfiguracion = (
+            SELECT IdConfiguracion
+            FROM Configuracion
+            ORDER BY IdConfiguracion
+            LIMIT 1
+        );
+    ";
+
+            using SqliteCommand comando =
+                new SqliteCommand(sql, conexion);
+
+            comando.Parameters.AddWithValue(
+                "@PesosPorPuntoCentavos",
+                pesosPorPuntoCentavos
+            );
+
+            int filasAfectadas = comando.ExecuteNonQuery();
+
+            if (filasAfectadas == 0)
+            {
+                throw new InvalidOperationException(
+                    "No se encontró la configuración del sistema."
+                );
+            }
+        }
     }
 }

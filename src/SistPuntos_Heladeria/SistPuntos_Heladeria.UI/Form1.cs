@@ -222,6 +222,58 @@ namespace SistPuntos_Heladeria.UI
             FrmPuntos frmPuntos = new FrmPuntos();
             frmPuntos.ShowDialog();
         }
+        private void btnConfiguracion_Click(object? sender, EventArgs e)
+        {
+            using FrmAutorizacion frmAutorizacion =
+                new FrmAutorizacion();
 
+            if (frmAutorizacion.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            using FrmConfiguracion frmConfiguracion =
+                new FrmConfiguracion();
+
+            frmConfiguracion.ShowDialog();
+        }
+
+        private void btnUsuarios_Click(object? sender, EventArgs e)
+        {
+            using FrmAutorizacion frmAutorizacion =
+                new FrmAutorizacion();
+
+            if (frmAutorizacion.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            using FrmUsuarios frmUsuarios =
+                new FrmUsuarios();
+
+            frmUsuarios.ShowDialog();
+        }
+        private void btnCambiarClave_Click(object? sender, EventArgs e)
+        {
+            using FrmAutorizacion frmAutorizacion =
+                new FrmAutorizacion();
+
+            if (frmAutorizacion.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            if (frmAutorizacion.UsuarioAutorizado == null)
+            {
+                return;
+            }
+
+            using FrmCambiarClave frmCambiarClave =
+                new FrmCambiarClave(
+                    frmAutorizacion.UsuarioAutorizado
+                );
+
+            frmCambiarClave.ShowDialog();
+        }
     }
 }

@@ -35,6 +35,16 @@ namespace SistPuntos_Heladeria.DAL
                     IdConfiguracion INTEGER PRIMARY KEY AUTOINCREMENT,
                     PesosPorPuntoCentavos INTEGER NOT NULL
                 );
+               
+                CREATE TABLE IF NOT EXISTS Usuarios (
+                IdUsuario INTEGER PRIMARY KEY AUTOINCREMENT,
+                Nombre TEXT NOT NULL,
+                Apellido TEXT NOT NULL,
+                NombreUsuario TEXT NOT NULL UNIQUE,
+                ClaveHash TEXT NOT NULL,
+                Rol TEXT NOT NULL,
+                Activo INTEGER NOT NULL DEFAULT 1
+                );
             ";
 
             using SqliteCommand comando =
